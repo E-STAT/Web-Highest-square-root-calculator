@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "square root page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">The square root calculator</h1>
+</div>
+
+@{
+    if(ViewBag.Result != null)
+    {
+        <div>
+            <p> The highest square root is: @ViewBag.Result</p>
+        </div>
+    }
+    if(ViewBag.Result < 0)
+    {
+        <div>
+            <p> Error! Please enter a non negative number: @ViewBag.Result </p>
+        </div>
+    if (ViewBag.result_diff = 0)
+    {
+        <div>
+            <p> Error!, enter different numbers: @ViewBag.result_diff</p>
+        </div>
+    }
+    }
+
+}
+
+<div>
+    <form asp-controller = "Cal" asp-action = "Sqrt" method= "POST">
+        
+        <input type = "number" placeholder="First Number" name = "firstnumber"/>
+        <input type = "number" placeholder="Second Number" name = "secondnumber"/>
+        <button type= "submit" > Submit </button>
+
+    </form>
+    
+</div>
